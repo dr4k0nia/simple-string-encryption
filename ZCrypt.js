@@ -354,10 +354,16 @@ ZCrypt.cryptstr = function()
         str += "\x00";
 
         let args = ZCrypt.do_crypt(str, rounds, add, sub, xor, not, shift, morph, neg);
-        //document.getElementById('zcrypt_encryption').value = ZCrypt.generate_encryption(args[0], args[1]);
-        document.getElementById('zcrypt_code').value = ZCrypt.generate_c(args[0], args[1]);
+
+        let result = ZCrypt.generate_c(args[0], args[1]);
+        
+        document.getElementById('zcrypt_code').innerHTML = result.replace(new RegExp("&", "g"), "&amp;").replace(new RegExp("<", "g"), "&lt;");
         if (makeEncryption)
-            document.getElementById('zcrypt_code').value += ZCrypt.generate_encryption(args[0], args[1]);
+        {
+            result = ZCrypt.generate_encryption(args[0], args[1]);
+            document.getElementById('zcrypt_code').innerHTML += result.replace(new RegExp("&", "g"), "&amp;").replace(new RegExp("<", "g"), "&lt;");
+        }
+
     } catch (e) {
         alert(e);
         return;

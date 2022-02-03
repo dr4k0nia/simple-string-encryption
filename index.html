@@ -4,20 +4,26 @@
     <title>Simple String Encrypt</title>
     <meta content="text/html" ; charset="UTF8" http-equiv="Content-Type">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <meta name="color-scheme" content="dark">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-night.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/vs2015.min.css">
     <script src="ZCrypt.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
     <script type="text/javascript">
+        hljs.highlightAll();
+
         function CopyCode() {
-            /* Select the text field */
-            document.getElementById("zcrypt_code").select();
 
-            /* Copy the text inside the text field */
-            document.execCommand("copy");
+            // Get code block element
+            const code = document.getElementById('zcrypt_code');
 
-            /* Show bootstrap alert for copied text */
+            // Copy innerText from code block to clipboard
+            navigator.clipboard.writeText(code.innerText);
+
+            // Show bootstrap alert for copied text
             $('#alert').show();
 
             setTimeout(function() {
@@ -53,7 +59,7 @@
     <div class="container mt-4">
         <div class="form-group row">
             <label for="zcrypt_plaintext" class="col-4 col-form-label">String input</label>
-            <div class="col-8">
+            <div class="mb-3 col-8">
                 <textarea id="zcrypt_plaintext" name="zcrypt_plaintext" cols="40" rows="3" class="form-control"
                           required="required">Test</textarea>
             </div>
@@ -61,48 +67,48 @@
         <div class="form-group row">
             <label class="col-4">Operations</label>
             <div class="col-8">
-                <div class="custom-control custom-checkbox custom-control-inline">
-                    <input name="zcrypt_add" id="zcrypt_add" type="checkbox" class="custom-control-input" value=""
+                <div class="mb-3 form-check form-check-inline">
+                    <input name="zcrypt_add" id="zcrypt_add" type="checkbox" class="form-check-input" value=""
                            checked="checked">
-                    <label for="zcrypt_add" class="custom-control-label">ADD</label>
+                    <label for="zcrypt_add" class="form-check-label">ADD</label>
                 </div>
-                <div class="custom-control custom-checkbox custom-control-inline">
-                    <input name="zcrypt_sub" id="zcrypt_sub" type="checkbox" class="custom-control-input" value=""
+                <div class="mb-3 form-check form-check-inline">
+                    <input name="zcrypt_sub" id="zcrypt_sub" type="checkbox" class="form-check-input" value=""
                            checked="checked">
-                    <label for="zcrypt_sub" class="custom-control-label">SUB</label>
+                    <label for="zcrypt_sub" class="form-check-label">SUB</label>
                 </div>
-                <div class="custom-control custom-checkbox custom-control-inline">
-                    <input name="zcrypt_xor" id="zcrypt_xor" type="checkbox" class="custom-control-input" value=""
+                <div class="mb-3 form-check form-check-inline">
+                    <input name="zcrypt_xor" id="zcrypt_xor" type="checkbox" class="form-check-input" value=""
                            checked="checked">
-                    <label for="zcrypt_xor" class="custom-control-label">XOR</label>
+                    <label for="zcrypt_xor" class="form-check-label">XOR</label>
                 </div>
-                <div class="custom-control custom-checkbox custom-control-inline">
-                    <input name="zcrypt_shift" id="zcrypt_shift" type="checkbox" class="custom-control-input" value=""
+                <div class="mb-3 form-check form-check-inline">
+                    <input name="zcrypt_shift" id="zcrypt_shift" type="checkbox" class="form-check-input" value=""
                            checked="checked">
-                    <label for="zcrypt_shift" class="custom-control-label">SHIFT</label>
+                    <label for="zcrypt_shift" class="form-check-label">SHIFT</label>
                 </div>
-                <div class="custom-control custom-checkbox custom-control-inline">
-                    <input name="zcrypt_not" id="zcrypt_not" type="checkbox" class="custom-control-input" value=""
+                <div class="mb-3 form-check form-check-inline">
+                    <input name="zcrypt_not" id="zcrypt_not" type="checkbox" class="form-check-input" value=""
                            checked="checked">
-                    <label for="zcrypt_not" class="custom-control-label">NOT</label>
+                    <label for="zcrypt_not" class="form-check-label">NOT</label>
                 </div>
-                <div class="custom-control custom-checkbox custom-control-inline">
-                    <input name="zcrypt_neg" id="zcrypt_neg" type="checkbox" class="custom-control-input" value=""
+                <div class="mb-3 form-check form-check-inline">
+                    <input name="zcrypt_neg" id="zcrypt_neg" type="checkbox" class="form-check-input" value=""
                            checked="checked">
-                    <label for="zcrypt_neg" class="custom-control-label">NEG</label>
+                    <label for="zcrypt_neg" class="form-check-label">NEG</label>
                 </div>
-                <div class="custom-control custom-checkbox custom-control-inline">
+                <div class="mb-3 form-check form-check-inline">
                     <input name="zcrypt_morph" id="zcrypt_morph" type="checkbox" checked="checked"
-                           class="custom-control-input" value="">
-                    <label for="zcrypt_morph" class="custom-control-label">MORPH</label>
+                           class="form-check-input" value="">
+                    <label for="zcrypt_morph" class="form-check-label">MORPH</label>
                 </div>
             </div>
         </div>
         <div class="form-group row">
             <label for="zcrypt_rounds" class="col-4 col-form-label">Rounds</label>
-            <div class="col-8">
+            <div class="mb-3 col-8">
                 <div class="alert alert-danger alert-dismissible" style="display: none;" role="alert" id="danger">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     <i class="fa fa-exclamation-triangle"></i> Rounds must be a numeric value bigger than 0 and smaller than 100
                 </div>
                 <input id="zcrypt_rounds" name="zcrypt_rounds" type="number" class="form-control" value="5">
@@ -112,35 +118,33 @@
             <label for="zcrypt_code" class="col-4 col-form-label">Code</label>
             <div class="col-8">
                 <div class="alert alert-info alert-dismissible" style="display: none;" role="alert" id="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     <i class="fa fa-info-circle"></i> Copied code to clipboard
                 </div>
-                <textarea id="zcrypt_code" name="zcrypt_code" cols="40" rows="15" class="form-control"
-                          style="font-family:monospace;" spellcheck="false"></textarea>
+                <pre class="pre-scrollable" style="max-height: 375px !important;" aria-hidden="true"><code class="language-csharp" id="zcrypt_code">//Your decryption routine will show up here</code></pre>
             </div>
         </div>
         <div class="form-group row">
             <div class="offset-4 col-8">
-                <button name="submit" type="submit" onclick="ZCrypt.cryptstr()" class="btn btn-primary">
+                <button name="submit" type="submit" onclick="ZCrypt.cryptstr(); hljs.highlightAll();" class="btn btn-primary">
                     Generate
                 </button>
                 <button name="copy" type="button" onclick="CopyCode()" class="btn btn-primary">
                     Copy Code
                 </button>
-                <div class="custom-control custom-checkbox custom-control-inline">
+                <div class="mb-3 form-check form-check-inline">
                     <input name="zcrypt_encryption" id="zcrypt_encryption" type="checkbox"
-                           class="custom-control-input">
-                    <label for="zcrypt_encryption" class="custom-control-label">Generate encryption routine</label>
+                           class="form-check-input">
+                    <label for="zcrypt_encryption" class="form-check-label">Generate encryption routine</label>
                 </div>
             </div>
         </div>
     </div>
-    <footer class="mt-auto bg-light text-center text-lg-start">
+    <footer class="mt-auto bg-light text-center text-lg-start" style="bottom: 0; position: fixed; left: 0; width: 100%;">
         <!-- Copyright -->
         <div class="text-center p-3">
             Made by drakonia |
-            <a class="text-dark"
-               href="https://zerosum0x0.blogspot.com/">Credits for ZCrypt to
+            <a class="text-dark" href="https://zerosum0x0.blogspot.com/">Credits for ZCrypt to
                 zerosum0x0</a>
         </div>
         <!-- Copyright -->
