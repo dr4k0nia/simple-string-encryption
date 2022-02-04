@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" class="h-100">
+  <head>
     <title>Simple String Encrypt</title>
     <meta content="text/html" ; charset="UTF8" http-equiv="Content-Type">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,142 +13,139 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
     <script type="text/javascript">
-        hljs.highlightAll();
-
-        function CopyCode() {
-
-            // Get code block element
-            const code = document.getElementById('zcrypt_code');
-
-            // Copy innerText from code block to clipboard
-            navigator.clipboard.writeText(code.innerText);
-
-            // Show bootstrap alert for copied text
-            $('#alert').show();
-
-            setTimeout(function() {
-                $('#alert').fadeOut('slow');
-            }, 1000);
-        }
+      hljs.highlightAll();
+      
+      function CopyCode() {
+      
+          // Get code block element
+          const code = document.getElementById('zcrypt_code');
+      
+          // Copy innerText from code block to clipboard
+          navigator.clipboard.writeText(code.innerText);
+      
+          // Show bootstrap alert for copied text
+          $('#alert').show();
+      
+          setTimeout(function() {
+              $('#alert').fadeOut('slow');
+          }, 1000);
+      }
     </script>
-</head>
-<body>
-<div class="container" >
-    <header>
+  </head>
+  <body class="d-flex flex-column h-100">
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+      <div class="container" >
+      <header>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <div class="container-fluid">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                </ul>
-            </div>
+          <div class="container-fluid">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+            </ul>
+          </div>
         </nav>
         <!-- Navbar -->
-
         <!-- Jumbotron -->
         <div class="p-2 text-center bg-light">
-            <h1 class="mb-3">C# String Encryption Generator</h1>
+          <h1 class="mb-3">C# String Encryption Generator</h1>
         </div>
         <!-- Jumbotron -->
-    </header>
-    <div class="container mt-4">
+      </header>
+      <div class="container mt-4">
         <div class="form-group row">
-            <label for="zcrypt_plaintext" class="col-4 col-form-label">String input</label>
-            <div class="mb-3 col-8">
-                <textarea id="zcrypt_plaintext" name="zcrypt_plaintext" cols="40" rows="3" class="form-control"
-                          required="required">Test</textarea>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-4">Operations</label>
-            <div class="col-8">
-                <div class="mb-3 form-check form-check-inline">
-                    <input name="zcrypt_add" id="zcrypt_add" type="checkbox" class="form-check-input" value=""
-                           checked="checked">
-                    <label for="zcrypt_add" class="form-check-label">ADD</label>
-                </div>
-                <div class="mb-3 form-check form-check-inline">
-                    <input name="zcrypt_sub" id="zcrypt_sub" type="checkbox" class="form-check-input" value=""
-                           checked="checked">
-                    <label for="zcrypt_sub" class="form-check-label">SUB</label>
-                </div>
-                <div class="mb-3 form-check form-check-inline">
-                    <input name="zcrypt_xor" id="zcrypt_xor" type="checkbox" class="form-check-input" value=""
-                           checked="checked">
-                    <label for="zcrypt_xor" class="form-check-label">XOR</label>
-                </div>
-                <div class="mb-3 form-check form-check-inline">
-                    <input name="zcrypt_shift" id="zcrypt_shift" type="checkbox" class="form-check-input" value=""
-                           checked="checked">
-                    <label for="zcrypt_shift" class="form-check-label">SHIFT</label>
-                </div>
-                <div class="mb-3 form-check form-check-inline">
-                    <input name="zcrypt_not" id="zcrypt_not" type="checkbox" class="form-check-input" value=""
-                           checked="checked">
-                    <label for="zcrypt_not" class="form-check-label">NOT</label>
-                </div>
-                <div class="mb-3 form-check form-check-inline">
-                    <input name="zcrypt_neg" id="zcrypt_neg" type="checkbox" class="form-check-input" value=""
-                           checked="checked">
-                    <label for="zcrypt_neg" class="form-check-label">NEG</label>
-                </div>
-                <div class="mb-3 form-check form-check-inline">
-                    <input name="zcrypt_morph" id="zcrypt_morph" type="checkbox" checked="checked"
-                           class="form-check-input" value="">
-                    <label for="zcrypt_morph" class="form-check-label">MORPH</label>
-                </div>
-            </div>
+          <label for="zcrypt_plaintext" class="col-4 col-form-label">String input</label>
+          <div class="mb-3 col-8">
+            <textarea id="zcrypt_plaintext" name="zcrypt_plaintext" cols="40" rows="3" class="form-control"
+              required="required">Test</textarea>
+          </div>
         </div>
         <div class="form-group row">
-            <label for="zcrypt_rounds" class="col-4 col-form-label">Rounds</label>
-            <div class="mb-3 col-8">
-                <div class="alert alert-danger alert-dismissible" style="display: none;" role="alert" id="danger">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <i class="fa fa-exclamation-triangle"></i> Rounds must be a numeric value bigger than 0 and smaller than 100
-                </div>
-                <input id="zcrypt_rounds" name="zcrypt_rounds" type="number" class="form-control" value="5">
+          <label class="col-4">Operations</label>
+          <div class="col-8">
+            <div class="mb-3 form-check form-check-inline">
+              <input name="zcrypt_add" id="zcrypt_add" type="checkbox" class="form-check-input" value=""
+                checked="checked">
+              <label for="zcrypt_add" class="form-check-label">ADD</label>
             </div>
+            <div class="mb-3 form-check form-check-inline">
+              <input name="zcrypt_sub" id="zcrypt_sub" type="checkbox" class="form-check-input" value=""
+                checked="checked">
+              <label for="zcrypt_sub" class="form-check-label">SUB</label>
+            </div>
+            <div class="mb-3 form-check form-check-inline">
+              <input name="zcrypt_xor" id="zcrypt_xor" type="checkbox" class="form-check-input" value=""
+                checked="checked">
+              <label for="zcrypt_xor" class="form-check-label">XOR</label>
+            </div>
+            <div class="mb-3 form-check form-check-inline">
+              <input name="zcrypt_shift" id="zcrypt_shift" type="checkbox" class="form-check-input" value=""
+                checked="checked">
+              <label for="zcrypt_shift" class="form-check-label">SHIFT</label>
+            </div>
+            <div class="mb-3 form-check form-check-inline">
+              <input name="zcrypt_not" id="zcrypt_not" type="checkbox" class="form-check-input" value=""
+                checked="checked">
+              <label for="zcrypt_not" class="form-check-label">NOT</label>
+            </div>
+            <div class="mb-3 form-check form-check-inline">
+              <input name="zcrypt_neg" id="zcrypt_neg" type="checkbox" class="form-check-input" value=""
+                checked="checked">
+              <label for="zcrypt_neg" class="form-check-label">NEG</label>
+            </div>
+            <div class="mb-3 form-check form-check-inline">
+              <input name="zcrypt_morph" id="zcrypt_morph" type="checkbox" checked="checked"
+                class="form-check-input" value="">
+              <label for="zcrypt_morph" class="form-check-label">MORPH</label>
+            </div>
+          </div>
         </div>
         <div class="form-group row">
-            <label for="zcrypt_code" class="col-4 col-form-label">Code</label>
-            <div class="col-8">
-                <div class="alert alert-info alert-dismissible" style="display: none;" role="alert" id="alert">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <i class="fa fa-info-circle"></i> Copied code to clipboard
-                </div>
-                <pre class="pre-scrollable" style="max-height: 375px !important;" aria-hidden="true"><code class="language-csharp" id="zcrypt_code">//Your decryption routine will show up here</code></pre>
+          <label for="zcrypt_rounds" class="col-4 col-form-label">Rounds</label>
+          <div class="mb-3 col-8">
+            <div class="alert alert-danger alert-dismissible" style="display: none;" role="alert" id="danger">
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              <i class="fa fa-exclamation-triangle"></i> Rounds must be a numeric value bigger than 0 and smaller than 100
             </div>
+            <input id="zcrypt_rounds" name="zcrypt_rounds" type="number" class="form-control" value="5">
+          </div>
         </div>
         <div class="form-group row">
-            <div class="offset-4 col-8">
-                <button name="submit" type="submit" onclick="ZCrypt.cryptstr(); hljs.highlightAll();" class="btn btn-primary">
-                    Generate
-                </button>
-                <button name="copy" type="button" onclick="CopyCode()" class="btn btn-primary">
-                    Copy Code
-                </button>
-                <div class="mb-3 form-check form-check-inline">
-                    <input name="zcrypt_encryption" id="zcrypt_encryption" type="checkbox"
-                           class="form-check-input">
-                    <label for="zcrypt_encryption" class="form-check-label">Generate encryption routine</label>
-                </div>
+          <label for="zcrypt_code" class="col-4 col-form-label">Code</label>
+          <div class="col-8">
+            <div class="alert alert-info alert-dismissible" style="display: none;" role="alert" id="alert">
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              <i class="fa fa-info-circle"></i> Copied code to clipboard
             </div>
+            <pre class="pre-scrollable" style="max-height: 375px !important;" aria-hidden="true"><code class="language-csharp" id="zcrypt_code">//Your decryption routine will show up here</code></pre>
+          </div>
         </div>
-    </div>
-    <footer class="mt-auto bg-light text-center text-lg-start">
-        <!-- Copyright -->
-        <div class="text-center p-3">
-            Made by drakonia |
-            <a class="text-dark" href="https://zerosum0x0.blogspot.com/">Credits for ZCrypt to
-                zerosum0x0</a>
+        <div class="form-group row">
+          <div class="offset-4 col-8">
+            <button name="submit" type="submit" onclick="ZCrypt.cryptstr(); hljs.highlightAll();" class="btn btn-primary">
+            Generate
+            </button>
+            <button name="copy" type="button" onclick="CopyCode()" class="btn btn-primary">
+            Copy Code
+            </button>
+            <div class="mb-3 form-check form-check-inline">
+              <input name="zcrypt_encryption" id="zcrypt_encryption" type="checkbox"
+                class="form-check-input">
+              <label for="zcrypt_encryption" class="form-check-label">Generate encryption routine</label>
+            </div>
+          </div>
         </div>
-        <!-- Copyright -->
+      </div>
+    </main>
+    <footer class="footer mt-auto py-3 bg-light text-center">
+      <div class="container">
+        <span class="text-muted">Made by drakonia | <a class="text-dark" href="https://zerosum0x0.blogspot.com/">Credits for ZCrypt to zerosum0x0</a></span>
+      </div>
     </footer>
-</div>
-</body>
+  </body>
 </html>
