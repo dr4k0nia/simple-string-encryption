@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100" onselectstart="return false;">
+<html lang="en" class="h-100">
   <head>
     <title>Simple String Encrypt</title>
     <meta content="text/html" ; charset="UTF8" http-equiv="Content-Type">
@@ -31,12 +31,20 @@
           }, 1000);
       }
     </script>
+    <style>
+      .notSelectable {
+        user-select: none; /* Chrome & Opera */
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer & Edge */
+      }
+    </style>
   </head>
   <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
       <div class="container" >
       <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white notSelectable">
           <div class="container-fluid">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item active">
@@ -48,19 +56,19 @@
             </ul>
           </div>
         </nav>
-        <div class="p-2 text-center bg-light">
+        <div class="p-2 text-center bg-light notSelectable">
           <h1 class="mb-3">C# String Encryption Generator</h1>
         </div>
       </header>
       <div class="container mt-4">
-        <div class="form-group row">
+        <div class="form-group row notSelectable">
           <label for="zcrypt_plaintext" class="col-4 col-form-label">String input</label>
           <div class="mb-3 col-8">
             <textarea id="zcrypt_plaintext" name="zcrypt_plaintext" cols="40" rows="3" class="form-control"
               required="required">Test</textarea>
           </div>
         </div>
-        <div class="form-group row">
+        <div class="form-group row notSelectable">
           <label class="col-4">Operations</label>
           <div class="col-8">
             <div class="mb-3 form-check form-check-inline">
@@ -100,7 +108,7 @@
             </div>
           </div>
         </div>
-        <div class="form-group row">
+        <div class="form-group row notSelectable">
           <label for="zcrypt_rounds" class="col-4 col-form-label">Rounds</label>
           <div class="mb-3 col-8">
             <div class="alert alert-danger alert-dismissible" style="display: none;" role="alert" id="danger">
@@ -110,17 +118,17 @@
             <input id="zcrypt_rounds" name="zcrypt_rounds" type="number" class="form-control" value="5">
           </div>
         </div>
-        <div class="form-group row">
-          <label for="zcrypt_code" class="col-4 col-form-label">Code</label>
+        <div class="form-group row" id="hey">
+          <label for="zcrypt_code" class="col-4 col-form-label notSelectable">Code</label>
           <div class="col-8">
             <div class="alert alert-info alert-dismissible" style="display: none;" role="alert" id="alert">
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               <i class="fa fa-info-circle"></i> Copied code to clipboard
             </div>
-            <pre class="pre-scrollable" style="max-height: 375px !important;" aria-hidden="true"><code class="language-csharp" id="zcrypt_code">//Your decryption routine will show up here</code></pre>
+            <pre class="pre-scrollable" style="max-height: 375px !important;" aria-hidden="true"><code class="language-csharp notSelectable" id="zcrypt_code">//Your decryption routine will show up here</code></pre>
           </div>
-        </div>
-        <div class="form-group row">
+        </div>        
+        <div class="form-group row notSelectable">
           <div class="offset-4 col-8">
             <div class="mb-3 form-check form-check-inline">
               <input name="zcrypt_encryption" id="zcrypt_encryption" type="checkbox"
@@ -134,7 +142,7 @@
         </div>
       </div>
     </main>
-    <footer class="footer mt-auto py-3 bg-light text-center">
+    <footer class="footer mt-auto py-3 bg-light text-center notSelectable">
       <div class="container">
         <span class="text-muted">Made by drakonia | <a class="text-dark" href="https://zerosum0x0.blogspot.com/">Credits for ZCrypt to zerosum0x0</a></span>
       </div>
