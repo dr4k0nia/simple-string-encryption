@@ -363,7 +363,7 @@ ZCrypt.cryptstr = function()
             result = ZCrypt.generate_encryption(args[0], args[1]);
             document.getElementById('zcrypt_code').innerHTML += result.replace(new RegExp("&", "g"), "&amp;").replace(new RegExp("<", "g"), "&lt;");
         }
-
+        document.getElementById('zcrypt_code').classList.remove("user-select-none");
     } catch (e) {
         alert(e);
         return;

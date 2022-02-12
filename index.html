@@ -33,12 +33,10 @@
     </script>
   </head>
   <body class="d-flex flex-column h-100">
-    <!-- Begin page content -->
     <main class="flex-shrink-0">
       <div class="container" >
       <header>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white user-select-none">
           <div class="container-fluid">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item active">
@@ -50,22 +48,19 @@
             </ul>
           </div>
         </nav>
-        <!-- Navbar -->
-        <!-- Jumbotron -->
-        <div class="p-2 text-center bg-light">
+        <div class="p-2 text-center bg-light user-select-none">
           <h1 class="mb-3">C# String Encryption Generator</h1>
         </div>
-        <!-- Jumbotron -->
       </header>
       <div class="container mt-4">
-        <div class="form-group row">
+        <div class="form-group row user-select-none">
           <label for="zcrypt_plaintext" class="col-4 col-form-label">String input</label>
           <div class="mb-3 col-8">
             <textarea id="zcrypt_plaintext" name="zcrypt_plaintext" cols="40" rows="3" class="form-control"
               required="required">Test</textarea>
           </div>
         </div>
-        <div class="form-group row">
+        <div class="form-group row user-select-none">
           <label class="col-4">Operations</label>
           <div class="col-8">
             <div class="mb-3 form-check form-check-inline">
@@ -105,7 +100,7 @@
             </div>
           </div>
         </div>
-        <div class="form-group row">
+        <div class="form-group row user-select-none">
           <label for="zcrypt_rounds" class="col-4 col-form-label">Rounds</label>
           <div class="mb-3 col-8">
             <div class="alert alert-danger alert-dismissible" style="display: none;" role="alert" id="danger">
@@ -116,33 +111,30 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="zcrypt_code" class="col-4 col-form-label">Code</label>
+          <label for="zcrypt_code" class="col-4 col-form-label user-select-none">Code</label>
           <div class="col-8">
             <div class="alert alert-info alert-dismissible" style="display: none;" role="alert" id="alert">
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               <i class="fa fa-info-circle"></i> Copied code to clipboard
             </div>
-            <pre class="pre-scrollable" style="max-height: 375px !important;" aria-hidden="true"><code class="language-csharp" id="zcrypt_code">//Your decryption routine will show up here</code></pre>
+            <pre class="pre-scrollable" style="max-height: 375px !important;" aria-hidden="true"><code class="language-csharp user-select-none" id="zcrypt_code">//Your decryption routine will show up here</code></pre>
           </div>
-        </div>
-        <div class="form-group row">
+        </div>        
+        <div class="form-group row user-select-none">
           <div class="offset-4 col-8">
-            <button name="submit" type="submit" onclick="ZCrypt.cryptstr(); hljs.highlightAll();" class="btn btn-primary">
-            Generate
-            </button>
-            <button name="copy" type="button" onclick="CopyCode()" class="btn btn-primary">
-            Copy Code
-            </button>
             <div class="mb-3 form-check form-check-inline">
               <input name="zcrypt_encryption" id="zcrypt_encryption" type="checkbox"
                 class="form-check-input">
               <label for="zcrypt_encryption" class="form-check-label">Generate encryption routine</label>
             </div>
+            <br>
+            <button name="submit" type="submit" onclick="ZCrypt.cryptstr(); hljs.highlightAll();" class="btn btn-primary">Generate</button>
+            <button name="copy" type="button" onclick="CopyCode()" class="btn btn-primary">Copy Code</button>
           </div>
         </div>
       </div>
     </main>
-    <footer class="footer mt-auto py-3 bg-light text-center">
+    <footer class="footer mt-auto py-3 bg-light text-center user-select-none">
       <div class="container">
         <span class="text-muted">Made by drakonia | <a class="text-dark" href="https://zerosum0x0.blogspot.com/">Credits for ZCrypt to zerosum0x0</a></span>
       </div>
